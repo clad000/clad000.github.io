@@ -1,0 +1,41 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Body from '../components/Body.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+// const { frontmatter } = Astro.props;
+// const post = await Astro.glob('../pages/000_aboutme.md');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <main>
+      <div class="p-[20px] lg:w-full m-auto">
+        <div class="mt-[10px] mx-auto lg:w-1/4">
+          <img src="../../public/photo/aboutMe.jpg" alt="" class="rounded-xl" />
+          <!-- content -->
+        </div>
+        <div class="class= mt-[100px] m-auto w-full lg:w-1/2">
+          <p>
+            Hi, 我是 Clad，外表看似宅宅，腦袋確實只裝宅宅的菜雞工程師。
+            <br />
+            <br />
+            喜歡 2D、3D、VR、Blockchain，然後學習 前端、資安、雲端服務，所以透過這個 Blog 紀錄一些過程。
+          </p>
+        </div>
+        <div class="class= mt-[50px] m-auto lg:w-1/2">
+          <slot />
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </Body>
+</html>

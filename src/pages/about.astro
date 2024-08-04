@@ -1,13 +1,50 @@
 ---
-// import Layout from '../layouts/BlogPost.astro';
-import Layout from '../layouts/MyPost.astro';
+import AboutLayout from '../layouts/AboutMe.astro';
+// const aboutPost = await Astro.glob('../pages/000_aboutme.md');
+import * as aboutPost from '../pages/post_about/000_aboutme.md';
+const awaitPost = aboutPost;
+const { frontmatter } = Astro.props;
 ---
 
-<Layout>
-	<p class="text-center">
-		Hi, 我是 Clad, 目前在一間消費性電子產品公司擔任工程師, 主要使用的技術有 React、Tailwind、Python
-		<br>
-		<br>
-		我也是一位宅宅, 喜歡動畫、Vtuber、日本文化, 有時間也會嘗試 2D、3D、VR、幣圈、區塊鏈相關的東西
-	</p>
-</Layout>
+<AboutLayout>
+  <!-- https://docs.astro.build/zh-tw/guides/markdown-content/ -->
+  <!-- https://ithelp.ithome.com.tw/articles/10315100?sc=rss.iron -->
+  <!-- 利用 markdown 來顯示 about me content -->
+  <!-- <h1>{aboutPost.frontmatter.title}</h1>
+  <h2>Post author: {aboutPost.frontmatter.author}</h2>
+  <p>{aboutPost.frontmatter.description}</p> -->
+  <!-- <p>this is about astro</p> -->
+  <hr />
+  <ul class="mt-[25px]">
+    Log
+    <div class="mt-[20px] ml-[25px]">
+      <li class="mb-[10px]">2024-06 Get CEH Practical Certificate</li>
+      <li class="mb-[10px]">2024-06 Get Driving License</li>
+      <li class="mb-[10px]">2024-03 Get CEH Certificate</li>
+      <li>2015-09 Work at ASUS</li>
+    </div>
+  </ul>
+  <ul class="mt-[25px]">
+    On the web
+    <div class="flex mt-[20px]">
+      <li class="w-20 pl-[25px]">
+        <a href="https://medium.com/@cladtsai" target="_blank">
+          <img src="../../public/photo/icon-medium.png" alt="" />
+        </a>
+      </li>
+      <li class="w-20 pl-[25px]">
+        <a href="https://github.com/clad000" target="_blank">
+          <img src="../../public/photo/icon-github.png" alt="" />
+        </a>
+      </li>
+      <li class="w-20 pl-[25px]">
+        <a href="https://www.pixiv.net/users/8913470/artworks" target="_blank">
+          <img src="../../public/photo/icon-pixiv.png" alt="" />
+        </a>
+      </li>
+    </div>
+  </ul>
+
+  <!-- <div>{awaitPost.frontmatter.title}</div> -->
+  <slot />
+</AboutLayout>
