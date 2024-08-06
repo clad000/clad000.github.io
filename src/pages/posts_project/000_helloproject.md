@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPost.astro
 public: true
 title: Project Test
 # description:
-heroImage: ../../../../../public/image/masthead-1.png
+heroImage: public/image/masthead-1.png
 tags:
   - test
 createdAt: 1663138523826
