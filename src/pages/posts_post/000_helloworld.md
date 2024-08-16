@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
 public: true
-title: Blog Test
+title: Hello Post
 # description:
 heroImage: /image/masthead-1.png
 tags:
